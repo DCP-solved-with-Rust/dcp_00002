@@ -20,20 +20,20 @@ Solved with Rust 1.27.0 nightly-2018-04-07. https://rustup.rs/
 
 ### Usage
 
-`cargo run (args)` and provide the list of numbers on stdin separated by whitespace.
+`cargo run` and provide the list of numbers on stdin separated by whitespace.
 
 Example:
 
 ```
-(input)
+cargo run <<EOF
+1 2 3 4 5
+EOF
 ```
 
 Output:
 
 ```
-(output)
+120 60 40 30 24
 ```
 
 Exits with non-zero if any errors occur.
-
-Exits with zero if (condition). Exits with one if not.

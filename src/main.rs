@@ -14,4 +14,32 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 
+use std::vec::Vec;
 
+use std::io;
+use std::io::prelude::*;
+
+fn main ()
+{
+    let stdin = io::stdin();
+
+    let mut nums = Vec::new();
+
+    for line in stdin.lock().lines()
+    {
+        let mut curr_inputs: Vec<i32> = line.unwrap().split(" ")
+            .map(|x| x.parse().expect("Not an integer!"))
+            .collect();
+
+        nums.append(&mut curr_inputs);
+    }
+
+    let product = nums.iter().fold(1i32, |prod, &val| prod * val);
+
+    for num in nums.iter()
+    {
+        print!("{} ", product / num);
+    }
+
+    print!("\n");
+}
