@@ -42,4 +42,15 @@ fn main ()
     }
 
     print!("\n");
+
+    /*
+     * To answer the question "what if we couldn't use division;
+     * then we'd use a double loop where we recalculated the product
+     * each time but we skipped the current number.
+     *
+     * Also, if they hadn't asked that question, that's what I would
+     * have done -- I wouldn't have thought of calculating the product
+     * and then dividing by the current number if they didn't mention
+     * division.
+     */
 }
