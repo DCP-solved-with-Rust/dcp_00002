@@ -18,6 +18,8 @@
 
 Solved with Rust 1.27.0 nightly-2018-04-07. https://rustup.rs/
 
+TODO: Without division like https://github.com/vineetjohn/daily-coding-problem/blob/master/solutions/problem_02.py
+
 ### Usage
 
 `cargo run` and provide the list of numbers on stdin separated by whitespace.
