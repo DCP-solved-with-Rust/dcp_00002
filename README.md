@@ -19,7 +19,7 @@
 Solved with Rust 1.27.0 nightly-2018-04-07. https://rustup.rs/
 
 After solving this I looked at how others had done it and I saw that
-https://github.com/vineetjohn/daily-coding-problem/blob/master/solutions/problem_02.py
+https://github.com/vineetjohn/daily-coding-problem/blob/4fc87d0d06a3e8969ee55ea494157e0bba2a0eae/solutions/problem_02.py
 was a better solution than my own original solution so I then adapted
 my solution accordingly.
 
