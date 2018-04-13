@@ -45,3 +45,27 @@ Output:
 ```
 
 Exits with non-zero if any errors occur.
+
+### Tests
+
+The original problem statement included the following examples of input and output:
+
+> For example, if our input was [1, 2, 3, 4, 5], the expected output would be
+> [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be
+> [2, 3, 6].
+
+Tests have been written for these examples. You can run the tests with
+
+```
+cargo test
+```
+
+Output:
+
+```
+running 2 tests
+test given_example_two ... ok
+test given_example_one ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
