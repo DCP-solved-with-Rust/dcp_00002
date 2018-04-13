@@ -19,6 +19,36 @@ use std::vec::Vec;
 use std::io;
 use std::io::prelude::*;
 
+fn get_products (nums: Vec<i32>) -> Vec<i32>
+{
+    let mut prod_left_side = Vec::with_capacity(nums.len());
+
+    let mut prod = 1;
+    for &num in nums.iter()
+    {
+        prod_left_side.push(prod);
+        prod *= num;
+    }
+
+    let mut prod_right_side = vec![0; nums.len()];
+
+    prod = 1;
+    for (&num, mut prod_i) in nums.iter().rev().zip(prod_right_side.iter_mut().rev())
+    {
+        *prod_i = prod;
+        prod *= num;
+    }
+
+    let mut results = Vec::with_capacity(nums.len());
+
+    for (&left, &right) in prod_left_side.iter().zip(prod_right_side.iter())
+    {
+        results.push(left * right);
+    }
+
+    return results;
+}
+
 fn main ()
 {
     let stdin = io::stdin();
@@ -34,23 +64,17 @@ fn main ()
         nums.append(&mut curr_inputs);
     }
 
-    let product = nums.iter().fold(1i32, |prod, &val| prod * val);
-
-    for num in nums.iter()
+    if nums.len() < 2
     {
-        print!("{} ", product / num);
+        panic!("Need at least two numbers!");
     }
 
-    print!("\n");
+    let results = get_products(nums);
 
-    /*
-     * To answer the question "what if we couldn't use division;
-     * then we'd use a double loop where we recalculated the product
-     * each time but we skipped the current number.
-     *
-     * Also, if they hadn't asked that question, that's what I would
-     * have done -- I wouldn't have thought of calculating the product
-     * and then dividing by the current number if they didn't mention
-     * division.
-     */
+    for result in results.iter().take(results.len() - 1)
+    {
+        print!("{} ", result);
+    }
+
+    print!("{}\n", results.last().unwrap());
 }

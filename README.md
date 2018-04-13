@@ -18,7 +18,13 @@
 
 Solved with Rust 1.27.0 nightly-2018-04-07. https://rustup.rs/
 
-TODO: Without division like https://github.com/vineetjohn/daily-coding-problem/blob/master/solutions/problem_02.py
+After solving this I looked at how others had done it and I saw that
+https://github.com/vineetjohn/daily-coding-problem/blob/master/solutions/problem_02.py
+was a better solution than my own original solution so I then adapted
+my solution accordingly.
+
+If you are interested in having a look at my original solution, see
+[main.rs at revision cd73455](https://github.com/DCP-solved-with-Rust/dcp_00002/blob/cd734556154e172e7578881f35a5d2ac43fcf0f1/src/main.rs).
 
 ### Usage
 
