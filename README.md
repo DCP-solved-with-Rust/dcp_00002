@@ -1,5 +1,7 @@
 # Daily Coding Problem: Problem #2
 
+This repository is part of the [DCP solved with Rust](https://dcp-solved-with-rust.github.io/) series.
+
 > Good morning. Here's your coding interview problem for today.
 >
 > This problem was asked by Uber.
