@@ -35,6 +35,11 @@ fn given_example_two ()
 
 fn get_products (nums: Vec<i32>) -> Vec<i32>
 {
+    if nums.len() < 2
+    {
+        panic!("Need at least two numbers!");
+    }
+
     let mut prod_left_side = Vec::with_capacity(nums.len());
 
     let mut prod = 1;
@@ -76,11 +81,6 @@ fn main ()
             .collect();
 
         nums.append(&mut curr_inputs);
-    }
-
-    if nums.len() < 2
-    {
-        panic!("Need at least two numbers!");
     }
 
     let results = get_products(nums);
