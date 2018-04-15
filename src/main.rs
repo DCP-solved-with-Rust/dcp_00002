@@ -21,6 +21,11 @@ use std::io::prelude::*;
 
 fn main ()
 {
+    /*
+     * We read from stdin the list of numbers that
+     * we are going calculate products for.
+     */
+
     let stdin = io::stdin();
 
     let mut nums = Vec::new();
@@ -28,7 +33,7 @@ fn main ()
     for line in stdin.lock().lines()
     {
         let mut curr_inputs: Vec<i32> = line.unwrap().split(" ")
-            .map(|x| x.parse().expect("Not an integer!"))
+            .map(|x| x.parse().expect("Inputs must be integers!"))
             .collect();
 
         nums.append(&mut curr_inputs);
