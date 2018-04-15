@@ -19,18 +19,29 @@ use std::vec::Vec;
 use std::io;
 use std::io::prelude::*;
 
-#[test]
-fn given_example_one ()
+fn main ()
 {
-    let input = vec![1, 2, 3, 4, 5];
-    assert!(get_products(input) == [120, 60, 40, 30, 24]);
-}
+    let stdin = io::stdin();
 
-#[test]
-fn given_example_two ()
-{
-    let input = vec![3, 2, 1];
-    assert!(get_products(input) == [2, 3, 6]);
+    let mut nums = Vec::new();
+
+    for line in stdin.lock().lines()
+    {
+        let mut curr_inputs: Vec<i32> = line.unwrap().split(" ")
+            .map(|x| x.parse().expect("Not an integer!"))
+            .collect();
+
+        nums.append(&mut curr_inputs);
+    }
+
+    let results = get_products(nums);
+
+    for result in results.iter().take(results.len() - 1)
+    {
+        print!("{} ", result);
+    }
+
+    print!("{}\n", results.last().unwrap());
 }
 
 fn get_products (nums: Vec<i32>) -> Vec<i32>
@@ -68,27 +79,16 @@ fn get_products (nums: Vec<i32>) -> Vec<i32>
     return results;
 }
 
-fn main ()
+#[test]
+fn given_example_one ()
 {
-    let stdin = io::stdin();
+    let input = vec![1, 2, 3, 4, 5];
+    assert!(get_products(input) == [120, 60, 40, 30, 24]);
+}
 
-    let mut nums = Vec::new();
-
-    for line in stdin.lock().lines()
-    {
-        let mut curr_inputs: Vec<i32> = line.unwrap().split(" ")
-            .map(|x| x.parse().expect("Not an integer!"))
-            .collect();
-
-        nums.append(&mut curr_inputs);
-    }
-
-    let results = get_products(nums);
-
-    for result in results.iter().take(results.len() - 1)
-    {
-        print!("{} ", result);
-    }
-
-    print!("{}\n", results.last().unwrap());
+#[test]
+fn given_example_two ()
+{
+    let input = vec![3, 2, 1];
+    assert!(get_products(input) == [2, 3, 6]);
 }
